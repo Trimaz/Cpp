@@ -5,20 +5,15 @@
 	ways of executing operations involving complex numbers, this class does it in a fashion
 	that puts all the necessary functionality in one place, making it easier to use and maintain.
 
-	Last updated: Saturday, April 15th 2007
+	Last updated: Sunday, April 16th 2007
 
 	Copyright (c) Thomas Juhl Kappel, 2017
 */
 
 #pragma once
 
-
-
 class Complex
 {
-private:
-	Complex(bool);
-
 public:
 
 	// The two parts that make up the complex number
@@ -36,24 +31,17 @@ public:
 	// Arithmetical operations
 	double Abs();
 	double Arg();
-	Complex Exp(double);
-	Complex Exp(Complex);
-	Complex Log(double);
-	Complex Log(Complex);
-	Complex Pow(double);
+
+	static Complex Exp(Complex);
+	static Complex Log(Complex);
 	Complex Pow(Complex);
-	Complex Sqrt(double);
-	Complex Sqrt(Complex);
+	Complex Sqrt();
 
 	// Operators
-	Complex operator +(double);
-	Complex operator +(Complex);
-	Complex operator -(double);
-	Complex operator -(Complex);
-	Complex operator *(double);
-	Complex operator *(Complex);
-	Complex operator /(double);
-	Complex operator /(Complex);
+	Complex operator +(const Complex&);
+	Complex operator -(const Complex&);
+	Complex operator *(const Complex&);
+	Complex operator /(const Complex&);
 
 	operator double();
 
