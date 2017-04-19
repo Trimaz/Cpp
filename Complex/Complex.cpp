@@ -69,11 +69,6 @@ Complex Complex::Pow(Complex z)
 
 Complex Complex::Sqrt()
 {
-	// sqrt(a+b*i):
-	//   a = sqrt((re + sqrt(re^2 + im^2)) / 2)
-	//   b = sgn(im)sqrt((-re + sqrt(re^2 + im^2)) / 2)
-	struct Complex w;
-
 	Complex z(
 		sqrt((Real + sqrt(Real * Real + Imaginary * Imaginary)) / 2.0),
 		sgn(Imaginary) * sqrt((-Real + sqrt(Real * Real + Imaginary * Imaginary)) / 2.0)
