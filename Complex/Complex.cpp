@@ -108,18 +108,9 @@ Complex Complex::operator *(const Complex& z)
 
 Complex Complex::operator /(const Complex& z)
 {
-	/*
-		(a+bi)/(c+di) = (ac+bd)/(c^2+d^2, (bc-ad)//c^2+d^2)
-	*/
-
-	auto a = Real;
-	auto b = Imaginary;
-	auto c = z.Real;
-	auto d = z.Imaginary;
-
 	Complex w(
-		(a*c + b*d) / (c*c + d*d),
-		(b*c - a*d) / (c*c + d*d));
+		(Real * z.Real + Imaginary * z.Imaginary) / (z.Real * z.Real + z.Imaginary * z.Imaginary),
+		(Imaginary * z.Real - Real * z.Imaginary) / (z.Real * z.Real + z.Imaginary * z.Imaginary));
 	return w;
 }
 
